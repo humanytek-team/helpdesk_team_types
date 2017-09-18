@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--Employee form view -->
+        <record id="x_view_helpdesk_ticket_form" model="ir.ui.view">
+            <field name="name">helpdesk.ticket.form.inherit</field>
+            <field name="model">helpdesk.ticket</field>
+            <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="/form/sheet/group/group/field[@name='ticket_type_id']" position="replace">
+                    <!--field name="ticket_type_id" widget="selection" domain="[('team_id','=',team_id)]" /-->
+                    <field name="ticket_type_id" widget="selection" domain="['|',('team_id','=',team_id),('team_id','=', False)]" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

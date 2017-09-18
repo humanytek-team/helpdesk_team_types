@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--Employee form view -->
+        <record id="x_view_helpdesk_ticket_type_tree" model="ir.ui.view">
+            <field name="name">helpdesk.ticket.type.tree.inherit</field>
+            <field name="model">helpdesk.ticket.type</field>
+            <field name="inherit_id" ref="helpdesk.helpdesk_ticket_type_view_tree"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="team_id"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>
